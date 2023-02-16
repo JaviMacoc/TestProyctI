@@ -20,21 +20,21 @@ public class GeneradorDeArchivoDeCasos {
 
             Random r = new Random();
             //variable que determina el nro de casos
-            //int caso = r.nextInt(1);
-            int caso = 1;
-            
-            char c;
+            int caso;
+            numeroRandom(caso = r.nextInt(1));
+//            int caso = 1;            
+            char c;            
             List<String> strings = new ArrayList<>();
 
             for (int g = 0; g < caso; g++) {
                 bw.write("# case " + (g + 1));
                 bw.newLine();
                 //variables que determinan el tamaño de la matriz
-                int y = 10000;
-                int x = 50;
+//                int y = 10000;
+//                int x = 50;
                 int contador = 0;
-                //int y = r.nextInt(10000);
-                //int x = r.nextInt(10000);
+                int y = r.nextInt(100);//Original 10000
+                int x = r.nextInt(100);//Original 10000
 
                 long inicio = System.currentTimeMillis();
                 
@@ -47,6 +47,8 @@ public class GeneradorDeArchivoDeCasos {
                     }
                     contador++;
                     strings.add(s.toString());
+                    
+//                    Escritura en el archivo cada 10 lineas, se probo para ver el tema del uso de memoria
 //                    if (contador > 10) {
 //                        for (String st : strings) {
 //                            System.out.println(st);
@@ -75,4 +77,15 @@ public class GeneradorDeArchivoDeCasos {
             System.out.println("Ha ocurrido un error generando el archivo");
         }
     }
+    
+    public int numeroRandom(int numero){
+        if(numero == 0){
+            Random r = new Random();            
+            int n = r.nextInt(3);
+            return n;
+        }else{
+            return numero;
+        }
+    }
+    
 }

@@ -17,9 +17,7 @@ public class Clase1 {
         BigDecimal bd=new BigDecimal("10.05357");
         numero=10;
         clase2.metodo2(numero, valorTotal, cantidad.valor);
-        System.out.println("cantidad: " + cantidad.valor);
-        System.out.println("valorTotal; " + valorTotal.valor);
-        System.out.println("numero: " + numero);
+        System.out.println("cantidad: " + cantidad.valor + ", valorTotal; " + valorTotal.valor + ", numero: " + numero );        
         System.out.println("Fin metodo1()");
         System.out.println("BD: " + bd);
         if(cantidad.valor!=0 || valorTotal.valor!=0 ){
@@ -68,6 +66,10 @@ public class Clase1 {
     public void setClase2(Clase2 clase2) {
         this.clase2 = clase2;
     }
-    
+
+    @Override
+    public String toString() {
+        return "Clase1{" + "numero=" + numero + ", palabra=" + palabra + ", valorTotal=" + valorTotal.valor + ", cantidad=" + cantidad.valor + ", clase2=" + clase2 + '}';
+    }
     
 }
